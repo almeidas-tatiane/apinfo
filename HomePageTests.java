@@ -12,14 +12,13 @@ public class HomePageTests extends BaseTests {
 	private WebDriver driver;
 		
 	@Test
-	public void testProcurarVagas() {
+	public void testProcurarVagas_QA() {
 		homePage.procurarVagas();
+		homePage.validarResultadoVagas();
+		assertThat(homePage.validarResultadoVagas(),is ("QA"));
 	}
 	
-	@Test
-	public void testvalidarResultadoVagas() {
-		testProcurarVagas();
-		assertThat(homePage.validarResultadoVagas(),is ("QA"));
-		}
+	
 
 }
+
