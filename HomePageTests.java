@@ -9,8 +9,7 @@ import base.BaseTests;
 
 public class HomePageTests extends BaseTests {
 	
-	private WebDriver driver;
-		
+			
 	@Test
 	public void testProcurarVagas_QA() {
 		homePage.procurarVagas();
