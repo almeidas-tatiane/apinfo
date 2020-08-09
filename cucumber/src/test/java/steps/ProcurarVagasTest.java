@@ -45,6 +45,18 @@ public class ProcurarVagasTest {
 		assertThat(homePage.validarResultadoVagas(),is ("QA"));
 	}
 	
+	@Quando("faco uma busca por vagas de {string}")
+	public void faco_uma_busca_por_vagas_de_vagas(String vagas) {
+		driver.findElement(formBusca).clear();
+		driver.findElement(formBusca).sendKeys(vagas);
+		driver.findElement(btnBusca).click();
+	}
+
+	@Entao("valido a palavra {string} encontrada no resultado")
+	public void valido_a_palavra_vagas_encontrada_no_resultado(String vagas) {
+		assertThat(homePage.validarResultadoVagas(),is (vagas));
+	}
+	
 	@After
 	public static void finalizar() {
 		driver.quit();
